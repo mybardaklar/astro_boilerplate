@@ -1,0 +1,27 @@
+---
+import "./Modal.widget.scss";
+
+export interface Props {
+	id: string;
+	tag?: string;
+	classList?: string[];
+	parentId?: string;
+}
+const { id, tag, classList, parentId } = Astro.props;
+
+const Element = tag ? tag : "aside";
+---
+
+<script src="./Modal.widget.js"></script>
+
+<Element
+	id={`${id}`}
+	class="W_Modal"
+	class:list={classList}
+	x-bind={parentId ? `W_Modal('${parentId}')` : "W_Modal"}
+	x-cloak>
+	<div class="W_Modal__backdrop" @click={`$store.modals.deactivate('${id}');`}></div>
+	<div class="W_Modal__wrapper">
+		<slot />
+	</div>
+</Element>

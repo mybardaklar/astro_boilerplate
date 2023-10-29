@@ -1,0 +1,62 @@
+---
+import "@styles/tailwind.scss";
+import "./Default.layout.scss";
+
+import { GoogleFontsOptimizer } from "astro-google-fonts-optimizer";
+import { sanityClient } from "sanity:client";
+
+import C_MainHeader from "@components/MainHeader/MainHeader.component.astro";
+import C_NavigationDrawer from "@components/NavigationDrawer/NavigationDrawer.component.astro";
+import C_MainFooter from "@components/MainFooter/MainFooter.component.astro";
+import C_Modal from "@components/Modal/Modal.component.astro";
+
+const fetchSubmenu = await sanityClient.fetch(
+	`*[_type == "productCategories"] | order(_createdAt) [0..3]`,
+);
+
+export interface Props {
+	title: string;
+	titlePrefix?: string;
+}
+const { title, titlePrefix = "Ce-Tek Spray Nozzle" } = Astro.props;
+---
+
+<script src="./Default.layout.js"></script>
+
+<html lang="tr" dir="ltr">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="generator" content={Astro.generator} />
+		<meta name="robots" content="index, follow" />
+		<title>{title} | {titlePrefix}</title>
+		<GoogleFontsOptimizer
+			url="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+		/>
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+	</head>
+	<body
+		x-data
+		class="U_Blurred"
+		x-bind:class="{ 'U_Blurred--on': Object.values($store.modals.items).includes(true) }">
+		<div id="app">
+			<slot name="fixed">
+				<C_NavigationDrawer submenu={fetchSubmenu} />
+				<C_Modal />
+			</slot>
+
+			<slot name="header">
+				<C_MainHeader submenu={fetchSubmenu} />
+			</slot>
+
+			<main class="U_Blurred__child">
+				<slot />
+			</main>
+
+			<slot name="footer">
+				<C_MainFooter />
+			</slot>
+		</div>
+	</body>
+</html>

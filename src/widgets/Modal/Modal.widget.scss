@@ -1,0 +1,120 @@
+.W_Modal {
+	@apply fixed top-0 left-0 z-20 w-full h-full overflow-hidden flex justify-center items-center p-4;
+
+	// while it is invisible in transition
+	&--invisible {
+		&.W_Modal--scale {
+			@apply invisible opacity-0;
+
+			.W_Modal__wrapper {
+				@apply scale-90 invisible opacity-0;
+			}
+		}
+
+		&.W_Modal--ltr {
+			@apply invisible opacity-0;
+
+			.W_Modal__wrapper {
+				@apply -translate-x-full invisible;
+			}
+		}
+
+		&.W_Modal--rtl {
+			@apply invisible opacity-0;
+
+			.W_Modal__wrapper {
+				@apply translate-x-full invisible;
+			}
+		}
+
+		&.W_Modal--ttb {
+			@apply invisible opacity-0;
+
+			.W_Modal__wrapper {
+				@apply -translate-y-full invisible;
+			}
+		}
+
+		&.W_Modal--btt {
+			@apply invisible opacity-0;
+
+			.W_Modal__wrapper {
+				@apply translate-y-full invisible;
+			}
+		}
+	}
+
+	// while it is visible in transition
+	&--visible {
+		&.W_Modal--scale {
+			@apply visible opacity-100;
+
+			.W_Modal__wrapper {
+				@apply scale-100 visible opacity-100 delay-500;
+			}
+		}
+
+		&.W_Modal--ltr,
+		&.W_Modal--rtl {
+			@apply visible opacity-100;
+
+			.W_Modal__wrapper {
+				@apply translate-x-0 visible delay-500;
+			}
+		}
+
+		&.W_Modal--ttb,
+		&.W_Modal--btt {
+			@apply visible opacity-100;
+
+			.W_Modal__wrapper {
+				@apply translate-y-0 visible delay-500;
+			}
+		}
+	}
+
+	&--ltr {
+		@apply p-0 justify-start;
+
+		.W_Modal__wrapper {
+			@apply max-w-sm max-h-full rounded-none;
+		}
+	}
+
+	&--rtl {
+		@apply p-0 justify-end;
+
+		.W_Modal__wrapper {
+			@apply max-w-sm max-h-full rounded-none;
+		}
+	}
+
+	&--ttb {
+		@apply p-0 px-8 justify-center items-start;
+
+		.W_Modal__wrapper {
+			@apply max-w-full max-h-96 rounded-none rounded-b-sm;
+		}
+	}
+
+	&--btt {
+		@apply p-0 px-8 justify-center items-end;
+
+		.W_Modal__wrapper {
+			@apply max-w-full max-h-96 rounded-none rounded-t-sm;
+		}
+	}
+
+	&--blurrable {
+		@apply transition-all duration-500 delay-500;
+	}
+
+	&__backdrop {
+		@apply fixed top-0 left-0 -z-10 w-full h-full overflow-hidden bg-gradient-to-tr from-zinc-950 to-transparent;
+	}
+
+	&__wrapper {
+		@apply w-full max-w-screen-lg h-full max-h-96 overflow-auto bg-zinc-100 rounded-sm transition-all duration-500;
+		box-shadow: 0 12px 24px 0 rgba(rgb(24 24 27), 0.2);
+	}
+}

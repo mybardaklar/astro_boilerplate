@@ -1,0 +1,253 @@
+---
+import "./Modal.component.scss";
+import ImgLogo from "@assets/img/logo.svg?url";
+
+import { Icon } from "astro-icon";
+import W_Modal from "@widgets/Modal/Modal.widget.astro";
+---
+
+<W_Modal id="W_Modal-ltr" parentId="W_Modal-rtl" classList={["W_Modal--ltr"]}>
+	<div class="p-4">
+		<button
+			class="inline-block py-2 px-3 bg-indigo-500 text-white text-sm font-semibold rounded-md"
+			@click="$store.modals.activate('W_Modal-rtl');">
+			W_Modal-rtl
+		</button>
+		<hr class="my-4" />
+		<p>
+			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas et arcu et eros
+			fringilla dignissim. Ut sagittis risus eu pretium pharetra. Nam justo nisi, aliquam
+			pellentesque massa ac, tempus gravida nibh. In hac habitasse platea dictumst.
+			Suspendisse et felis eget tortor cursus convallis nec vitae lorem. Fusce tincidunt, nisi
+			vel pretium mollis, nibh magna sollicitudin est, eget semper arcu massa at eros. Nunc at
+			sem ac quam placerat luctus eu sit amet mauris. Suspendisse quis mauris eget dolor
+			elementum porta. Aenean ligula purus, tristique ut cursus quis, commodo eget ex.
+			Phasellus ullamcorper metus eu dui porttitor placerat. Sed tincidunt sagittis neque
+			sagittis facilisis. Integer pellentesque accumsan risus, at posuere ipsum vestibulum in.
+			Nulla convallis vestibulum diam in luctus. Nunc vestibulum, nibh non tempus sagittis,
+			metus diam pulvinar tellus, a blandit velit dolor vitae turpis. Nam nisl nisl, auctor eu
+			pharetra id, condimentum ut mauris. Sed eu elementum mi.
+		</p>
+		<p>
+			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas et arcu et eros
+			fringilla dignissim. Ut sagittis risus eu pretium pharetra. Nam justo nisi, aliquam
+			pellentesque massa ac, tempus gravida nibh. In hac habitasse platea dictumst.
+			Suspendisse et felis eget tortor cursus convallis nec vitae lorem. Fusce tincidunt, nisi
+			vel pretium mollis, nibh magna sollicitudin est, eget semper arcu massa at eros. Nunc at
+			sem ac quam placerat luctus eu sit amet mauris. Suspendisse quis mauris eget dolor
+			elementum porta. Aenean ligula purus, tristique ut cursus quis, commodo eget ex.
+			Phasellus ullamcorper metus eu dui porttitor placerat. Sed tincidunt sagittis neque
+			sagittis facilisis. Integer pellentesque accumsan risus, at posuere ipsum vestibulum in.
+			Nulla convallis vestibulum diam in luctus. Nunc vestibulum, nibh non tempus sagittis,
+			metus diam pulvinar tellus, a blandit velit dolor vitae turpis. Nam nisl nisl, auctor eu
+			pharetra id, condimentum ut mauris. Sed eu elementum mi.
+		</p>
+		<p>
+			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas et arcu et eros
+			fringilla dignissim. Ut sagittis risus eu pretium pharetra. Nam justo nisi, aliquam
+			pellentesque massa ac, tempus gravida nibh. In hac habitasse platea dictumst.
+			Suspendisse et felis eget tortor cursus convallis nec vitae lorem. Fusce tincidunt, nisi
+			vel pretium mollis, nibh magna sollicitudin est, eget semper arcu massa at eros. Nunc at
+			sem ac quam placerat luctus eu sit amet mauris. Suspendisse quis mauris eget dolor
+			elementum porta. Aenean ligula purus, tristique ut cursus quis, commodo eget ex.
+			Phasellus ullamcorper metus eu dui porttitor placerat. Sed tincidunt sagittis neque
+			sagittis facilisis. Integer pellentesque accumsan risus, at posuere ipsum vestibulum in.
+			Nulla convallis vestibulum diam in luctus. Nunc vestibulum, nibh non tempus sagittis,
+			metus diam pulvinar tellus, a blandit velit dolor vitae turpis. Nam nisl nisl, auctor eu
+			pharetra id, condimentum ut mauris. Sed eu elementum mi.
+		</p>
+		<p>
+			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas et arcu et eros
+			fringilla dignissim. Ut sagittis risus eu pretium pharetra. Nam justo nisi, aliquam
+			pellentesque massa ac, tempus gravida nibh. In hac habitasse platea dictumst.
+			Suspendisse et felis eget tortor cursus convallis nec vitae lorem. Fusce tincidunt, nisi
+			vel pretium mollis, nibh magna sollicitudin est, eget semper arcu massa at eros. Nunc at
+			sem ac quam placerat luctus eu sit amet mauris. Suspendisse quis mauris eget dolor
+			elementum porta. Aenean ligula purus, tristique ut cursus quis, commodo eget ex.
+			Phasellus ullamcorper metus eu dui porttitor placerat. Sed tincidunt sagittis neque
+			sagittis facilisis. Integer pellentesque accumsan risus, at posuere ipsum vestibulum in.
+			Nulla convallis vestibulum diam in luctus. Nunc vestibulum, nibh non tempus sagittis,
+			metus diam pulvinar tellus, a blandit velit dolor vitae turpis. Nam nisl nisl, auctor eu
+			pharetra id, condimentum ut mauris. Sed eu elementum mi.
+		</p>
+		<p>
+			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas et arcu et eros
+			fringilla dignissim. Ut sagittis risus eu pretium pharetra. Nam justo nisi, aliquam
+			pellentesque massa ac, tempus gravida nibh. In hac habitasse platea dictumst.
+			Suspendisse et felis eget tortor cursus convallis nec vitae lorem. Fusce tincidunt, nisi
+			vel pretium mollis, nibh magna sollicitudin est, eget semper arcu massa at eros. Nunc at
+			sem ac quam placerat luctus eu sit amet mauris. Suspendisse quis mauris eget dolor
+			elementum porta. Aenean ligula purus, tristique ut cursus quis, commodo eget ex.
+			Phasellus ullamcorper metus eu dui porttitor placerat. Sed tincidunt sagittis neque
+			sagittis facilisis. Integer pellentesque accumsan risus, at posuere ipsum vestibulum in.
+			Nulla convallis vestibulum diam in luctus. Nunc vestibulum, nibh non tempus sagittis,
+			metus diam pulvinar tellus, a blandit velit dolor vitae turpis. Nam nisl nisl, auctor eu
+			pharetra id, condimentum ut mauris. Sed eu elementum mi.
+		</p>
+	</div>
+</W_Modal>
+
+<W_Modal id="W_Modal-rtl" parentId="W_Modal-ttb" classList={["W_Modal--rtl"]}>
+	<div class="p-4">
+		<button
+			class="inline-block py-2 px-3 bg-indigo-500 text-white text-sm font-semibold rounded-md"
+			@click="$store.modals.activate('W_Modal-ttb');">
+			W_Modal-ttb
+		</button>
+		<hr class="my-4" />
+		<p>
+			Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur nostrum mollitia,
+			dolores ad eligendi quasi dignissimos! Ipsum itaque dolore voluptatem atque numquam
+			delectus quibusdam nemo aliquid qui earum, minus beatae!
+		</p>
+	</div>
+</W_Modal>
+
+<W_Modal id="W_Modal-ttb" parentId="W_Modal-btt" classList={["W_Modal--ttb"]}>
+	<div class="p-4">
+		<button
+			class="inline-block py-2 px-3 bg-indigo-500 text-white text-sm font-semibold rounded-md"
+			@click="$store.modals.activate('W_Modal-btt');">
+			W_Modal-btt
+		</button>
+		<hr class="my-4" />
+		<p>
+			Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur nostrum mollitia,
+			dolores ad eligendi quasi dignissimos! Ipsum itaque dolore voluptatem atque numquam
+			delectus quibusdam nemo aliquid qui earum, minus beatae!
+		</p>
+	</div>
+</W_Modal>
+
+<W_Modal id="W_Modal-btt" parentId="W_Modal-1" classList={["W_Modal--btt"]}>
+	<div class="p-4">
+		<button
+			class="inline-block py-2 px-3 bg-indigo-500 text-white text-sm font-semibold rounded-md"
+			@click="$store.modals.activate('W_Modal-1');">
+			W_Modal-1
+		</button>
+		<hr class="my-4" />
+		<p>
+			Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur nostrum mollitia,
+			dolores ad eligendi quasi dignissimos! Ipsum itaque dolore voluptatem atque numquam
+			delectus quibusdam nemo aliquid qui earum, minus beatae!
+		</p>
+	</div>
+</W_Modal>
+
+<W_Modal id="W_Modal-1" classList={["W_Modal--scale", "C_Modal"]}>
+	<div class="p-10">
+		<p>
+			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas et arcu et eros
+			fringilla dignissim. Ut sagittis risus eu pretium pharetra. Nam justo nisi, aliquam
+			pellentesque massa ac, tempus gravida nibh. In hac habitasse platea dictumst.
+			Suspendisse et felis eget tortor cursus convallis nec vitae lorem. Fusce tincidunt, nisi
+			vel pretium mollis, nibh magna sollicitudin est, eget semper arcu massa at eros. Nunc at
+			sem ac quam placerat luctus eu sit amet mauris. Suspendisse quis mauris eget dolor
+			elementum porta. Aenean ligula purus, tristique ut cursus quis, commodo eget ex.
+			Phasellus ullamcorper metus eu dui porttitor placerat. Sed tincidunt sagittis neque
+			sagittis facilisis. Integer pellentesque accumsan risus, at posuere ipsum vestibulum in.
+			Nulla convallis vestibulum diam in luctus. Nunc vestibulum, nibh non tempus sagittis,
+			metus diam pulvinar tellus, a blandit velit dolor vitae turpis. Nam nisl nisl, auctor eu
+			pharetra id, condimentum ut mauris. Sed eu elementum mi.
+		</p>
+		<p>
+			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas et arcu et eros
+			fringilla dignissim. Ut sagittis risus eu pretium pharetra. Nam justo nisi, aliquam
+			pellentesque massa ac, tempus gravida nibh. In hac habitasse platea dictumst.
+			Suspendisse et felis eget tortor cursus convallis nec vitae lorem. Fusce tincidunt, nisi
+			vel pretium mollis, nibh magna sollicitudin est, eget semper arcu massa at eros. Nunc at
+			sem ac quam placerat luctus eu sit amet mauris. Suspendisse quis mauris eget dolor
+			elementum porta. Aenean ligula purus, tristique ut cursus quis, commodo eget ex.
+			Phasellus ullamcorper metus eu dui porttitor placerat. Sed tincidunt sagittis neque
+			sagittis facilisis. Integer pellentesque accumsan risus, at posuere ipsum vestibulum in.
+			Nulla convallis vestibulum diam in luctus. Nunc vestibulum, nibh non tempus sagittis,
+			metus diam pulvinar tellus, a blandit velit dolor vitae turpis. Nam nisl nisl, auctor eu
+			pharetra id, condimentum ut mauris. Sed eu elementum mi.
+		</p>
+		<p>
+			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas et arcu et eros
+			fringilla dignissim. Ut sagittis risus eu pretium pharetra. Nam justo nisi, aliquam
+			pellentesque massa ac, tempus gravida nibh. In hac habitasse platea dictumst.
+			Suspendisse et felis eget tortor cursus convallis nec vitae lorem. Fusce tincidunt, nisi
+			vel pretium mollis, nibh magna sollicitudin est, eget semper arcu massa at eros. Nunc at
+			sem ac quam placerat luctus eu sit amet mauris. Suspendisse quis mauris eget dolor
+			elementum porta. Aenean ligula purus, tristique ut cursus quis, commodo eget ex.
+			Phasellus ullamcorper metus eu dui porttitor placerat. Sed tincidunt sagittis neque
+			sagittis facilisis. Integer pellentesque accumsan risus, at posuere ipsum vestibulum in.
+			Nulla convallis vestibulum diam in luctus. Nunc vestibulum, nibh non tempus sagittis,
+			metus diam pulvinar tellus, a blandit velit dolor vitae turpis. Nam nisl nisl, auctor eu
+			pharetra id, condimentum ut mauris. Sed eu elementum mi.
+		</p>
+		<p>
+			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas et arcu et eros
+			fringilla dignissim. Ut sagittis risus eu pretium pharetra. Nam justo nisi, aliquam
+			pellentesque massa ac, tempus gravida nibh. In hac habitasse platea dictumst.
+			Suspendisse et felis eget tortor cursus convallis nec vitae lorem. Fusce tincidunt, nisi
+			vel pretium mollis, nibh magna sollicitudin est, eget semper arcu massa at eros. Nunc at
+			sem ac quam placerat luctus eu sit amet mauris. Suspendisse quis mauris eget dolor
+			elementum porta. Aenean ligula purus, tristique ut cursus quis, commodo eget ex.
+			Phasellus ullamcorper metus eu dui porttitor placerat. Sed tincidunt sagittis neque
+			sagittis facilisis. Integer pellentesque accumsan risus, at posuere ipsum vestibulum in.
+			Nulla convallis vestibulum diam in luctus. Nunc vestibulum, nibh non tempus sagittis,
+			metus diam pulvinar tellus, a blandit velit dolor vitae turpis. Nam nisl nisl, auctor eu
+			pharetra id, condimentum ut mauris. Sed eu elementum mi.
+		</p>
+		<p>
+			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas et arcu et eros
+			fringilla dignissim. Ut sagittis risus eu pretium pharetra. Nam justo nisi, aliquam
+			pellentesque massa ac, tempus gravida nibh. In hac habitasse platea dictumst.
+			Suspendisse et felis eget tortor cursus convallis nec vitae lorem. Fusce tincidunt, nisi
+			vel pretium mollis, nibh magna sollicitudin est, eget semper arcu massa at eros. Nunc at
+			sem ac quam placerat luctus eu sit amet mauris. Suspendisse quis mauris eget dolor
+			elementum porta. Aenean ligula purus, tristique ut cursus quis, commodo eget ex.
+			Phasellus ullamcorper metus eu dui porttitor placerat. Sed tincidunt sagittis neque
+			sagittis facilisis. Integer pellentesque accumsan risus, at posuere ipsum vestibulum in.
+			Nulla convallis vestibulum diam in luctus. Nunc vestibulum, nibh non tempus sagittis,
+			metus diam pulvinar tellus, a blandit velit dolor vitae turpis. Nam nisl nisl, auctor eu
+			pharetra id, condimentum ut mauris. Sed eu elementum mi.
+		</p>
+		<p>
+			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas et arcu et eros
+			fringilla dignissim. Ut sagittis risus eu pretium pharetra. Nam justo nisi, aliquam
+			pellentesque massa ac, tempus gravida nibh. In hac habitasse platea dictumst.
+			Suspendisse et felis eget tortor cursus convallis nec vitae lorem. Fusce tincidunt, nisi
+			vel pretium mollis, nibh magna sollicitudin est, eget semper arcu massa at eros. Nunc at
+			sem ac quam placerat luctus eu sit amet mauris. Suspendisse quis mauris eget dolor
+			elementum porta. Aenean ligula purus, tristique ut cursus quis, commodo eget ex.
+			Phasellus ullamcorper metus eu dui porttitor placerat. Sed tincidunt sagittis neque
+			sagittis facilisis. Integer pellentesque accumsan risus, at posuere ipsum vestibulum in.
+			Nulla convallis vestibulum diam in luctus. Nunc vestibulum, nibh non tempus sagittis,
+			metus diam pulvinar tellus, a blandit velit dolor vitae turpis. Nam nisl nisl, auctor eu
+			pharetra id, condimentum ut mauris. Sed eu elementum mi.
+		</p>
+		<p>
+			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas et arcu et eros
+			fringilla dignissim. Ut sagittis risus eu pretium pharetra. Nam justo nisi, aliquam
+			pellentesque massa ac, tempus gravida nibh. In hac habitasse platea dictumst.
+			Suspendisse et felis eget tortor cursus convallis nec vitae lorem. Fusce tincidunt, nisi
+			vel pretium mollis, nibh magna sollicitudin est, eget semper arcu massa at eros. Nunc at
+			sem ac quam placerat luctus eu sit amet mauris. Suspendisse quis mauris eget dolor
+			elementum porta. Aenean ligula purus, tristique ut cursus quis, commodo eget ex.
+			Phasellus ullamcorper metus eu dui porttitor placerat. Sed tincidunt sagittis neque
+			sagittis facilisis. Integer pellentesque accumsan risus, at posuere ipsum vestibulum in.
+			Nulla convallis vestibulum diam in luctus. Nunc vestibulum, nibh non tempus sagittis,
+			metus diam pulvinar tellus, a blandit velit dolor vitae turpis. Nam nisl nisl, auctor eu
+			pharetra id, condimentum ut mauris. Sed eu elementum mi.
+		</p>
+		<p>
+			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas et arcu et eros
+			fringilla dignissim. Ut sagittis risus eu pretium pharetra. Nam justo nisi, aliquam
+			pellentesque massa ac, tempus gravida nibh. In hac habitasse platea dictumst.
+			Suspendisse et felis eget tortor cursus convallis nec vitae lorem. Fusce tincidunt, nisi
+			vel pretium mollis, nibh magna sollicitudin est, eget semper arcu massa at eros. Nunc at
+			sem ac quam placerat luctus eu sit amet mauris. Suspendisse quis mauris eget dolor
+			elementum porta. Aenean ligula purus, tristique ut cursus quis, commodo eget ex.
+			Phasellus ullamcorper metus eu dui porttitor placerat. Sed tincidunt sagittis neque
+			sagittis facilisis. Integer pellentesque accumsan risus, at posuere ipsum vestibulum in.
+			Nulla convallis vestibulum diam in luctus. Nunc vestibulum, nibh non tempus sagittis,
+			metus diam pulvinar tellus, a blandit velit dolor vitae turpis. Nam nisl nisl, auctor eu
+			pharetra id, condimentum ut mauris. Sed eu elementum mi.
+		</p>
+	</div>
+</W_Modal>

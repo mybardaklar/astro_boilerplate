@@ -1,0 +1,84 @@
+---
+import "./NavigationDrawer.component.scss";
+import ImgLogo from "@assets/img/logo.svg?url";
+
+import { Icon } from "astro-icon";
+import W_Modal from "@widgets/Modal/Modal.widget.astro";
+
+export interface Props {
+	submenu: string[];
+}
+const { submenu } = Astro.props;
+---
+
+<W_Modal tag="aside" id="C_NavigationDrawer" classList={["W_Modal--ltr", "C_NavigationDrawer"]}>
+	<div class="C_NavigationDrawer__header">
+		<a href="/" @click.prevent="$store.modals.activate('W_NavigationDrawer-2');">
+			<img src={ImgLogo} alt="Ce-Tek Spray Nozzle Brand Logo" />
+		</a>
+	</div>
+
+	<hr />
+
+	<div class="C_NavigationDrawer__content">
+		<nav class="C_NavigationDrawer__nav">
+			<ul>
+				<li>
+					<a href="/">Ana Sayfa</a>
+				</li>
+				<li
+					class="W_Collapsible"
+					x-data="{ isExpanded: false }"
+					x-bind:class="{ 'W_Collapsible--expanded': isExpanded }"
+					x-on:click.outside="isExpanded = false;">
+					<a
+						href="/products"
+						class="W_Collapsible__trigger"
+						x-on:click.prevent="isExpanded = !isExpanded;">
+						Ürünlerimiz
+						<Icon name="mdi:chevron-down" width="20" height="20" />
+					</a>
+					<div class="W_Collapsible__panel">
+						<ul>
+							{
+								submenu.map((submenu: any) => {
+									return (
+										<li>
+											<a href={`/products/${submenu.slug.current}`}>
+												{submenu.title}
+											</a>
+										</li>
+									);
+								})
+							}
+							<li>
+								<a href="/products"><strong>Daha Fazlası</strong></a>
+							</li>
+							<li>
+								<hr />
+							</li>
+						</ul>
+					</div>
+				</li>
+				<li>
+					<a href="/sectoral-nozzles">Sektörel Nozullar</a>
+				</li>
+				<li>
+					<a href="/gallery">Galeri</a>
+				</li>
+				<li>
+					<a href="/contact">İletişim</a>
+				</li>
+			</ul>
+		</nav>
+	</div>
+
+	<div class="mb-auto"></div>
+
+	<div class="C_NavigationDrawer__footer">
+		<p>
+			Copyright &copy; 2020-{new Date().getFullYear()} Ce-Tek Spray Nozzle. <br /> All rights
+			reserved.
+		</p>
+	</div>
+</W_Modal>

@@ -1,0 +1,16 @@
+---
+export interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<h3 class="component-three">{title}</h3>
+
+<style lang="scss">
+	.component-three {
+		color: green;
+		font-size: 36px;
+	}
+</style>

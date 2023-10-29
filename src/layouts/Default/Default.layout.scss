@@ -1,0 +1,89 @@
+@use "sass:math";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+	html,
+	body {
+		@apply font-primary;
+		font-size: 14px;
+
+		@screen lg {
+			font-size: 16px;
+		}
+	}
+
+	body {
+		$backgroundLines: math.div(100%, 6);
+
+		background-image: linear-gradient(
+			to right,
+			#fff calc(#{$backgroundLines * 1} - 2px),
+			rgba(#bbbbbb, 0.4) calc(#{$backgroundLines * 1}),
+			#fff calc(#{$backgroundLines * 1}),
+			#fff calc(#{$backgroundLines * 2} - 2px),
+			rgba(#bbbbbb, 0.4) calc(#{$backgroundLines * 2}),
+			#fff calc(#{$backgroundLines * 2}),
+			#fff calc(#{$backgroundLines * 3} - 2px),
+			rgba(#bbbbbb, 0.4) calc(#{$backgroundLines * 3}),
+			#fff calc(#{$backgroundLines * 3}),
+			#fff calc(#{$backgroundLines * 4} - 2px),
+			rgba(#bbbbbb, 0.4) calc(#{$backgroundLines * 4}),
+			#fff calc(#{$backgroundLines * 4}),
+			#fff calc(#{$backgroundLines * 5} - 2px),
+			rgba(#bbbbbb, 0.4) calc(#{$backgroundLines * 5}),
+			#fff calc(#{$backgroundLines * 5}),
+			#fff calc(#{$backgroundLines * 6} - 2px),
+			rgba(#bbbbbb, 0.4) calc(#{$backgroundLines * 6}),
+			#fff calc(#{$backgroundLines * 6})
+		);
+	}
+}
+
+[x-cloak] {
+	display: none !important;
+}
+
+.W_Collapsible {
+	&--expanded {
+		.W_Collapsible__panel {
+			@apply max-h-screen pointer-events-auto;
+		}
+	}
+
+	&__trigger {
+		@apply cursor-pointer;
+	}
+
+	&__panel {
+		@apply overflow-hidden max-h-0 pointer-events-none transition-all duration-500;
+	}
+}
+
+.W_HasIndicator {
+	@apply relative;
+
+	&__marker {
+		@apply absolute top-0 left-0 invisible opacity-0 pointer-events-none transition-all duration-200;
+
+		mark {
+			@apply block transition-all duration-200;
+		}
+	}
+}
+
+.U_Blurred {
+	&--on {
+		@apply overflow-hidden;
+
+		.U_Blurred__child {
+			@apply blur-sm delay-0;
+		}
+	}
+
+	&__child {
+		@apply duration-500 delay-500;
+	}
+}

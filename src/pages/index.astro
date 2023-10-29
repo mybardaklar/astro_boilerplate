@@ -1,0 +1,167 @@
+---
+import ImgLogo from "@assets/img/logo--colored.png?url";
+
+import DefaultLayout from "@layouts/Default/Default.layout.astro";
+import HomeHero from "@components/HomeHero/HomeHero.component.astro";
+---
+
+<style>
+	.indexPage {
+		background-color: red;
+	}
+</style>
+
+<DefaultLayout title="Ana Sayfa">
+	<div class="container">
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<HomeHero />
+
+		<div class="sticky bottom-3 right-3 grid gap-3">
+			<button
+				type="button"
+				class="py-2 px-3 bg-indigo-500 text-white text-sm font-semibold rounded-md shadow focus:outline-none"
+				tabindex="-1"
+				x-on:click="$store.modals.activate('C_NavigationDrawer');">
+				navdrawer
+			</button>
+
+			<button
+				type="button"
+				class="py-2 px-3 bg-indigo-500 text-white text-sm font-semibold rounded-md shadow focus:outline-none"
+				tabindex="-1"
+				x-on:click="$store.modals.activate('W_Modal-ltr');">
+				navdrawer-1
+			</button>
+
+			<button
+				type="button"
+				class="py-2 px-3 bg-indigo-500 text-white text-sm font-semibold rounded-md shadow focus:outline-none"
+				tabindex="-1"
+				x-on:click="$store.modals.activate('W_Modal-2');">
+				navdrawer-2
+			</button>
+
+			<button
+				type="button"
+				class="py-2 px-3 bg-indigo-500 text-white text-sm font-semibold rounded-md shadow focus:outline-none"
+				tabindex="-1"
+				x-on:click="$store.modals.activate('W_Modal-1');">
+				modal-1
+			</button>
+		</div>
+
+		<div
+			class="W_Collapsible"
+			x-data="{ isExpanded: false, timeout: null }"
+			x-bind:class="{ 'W_Collapsible--expanded': isExpanded }"
+			x-on:mouseenter.stop="isExpanded = true; clearTimeout(timeout);"
+			x-on:mouseleave.stop="timeout = setTimeout(() => { isExpanded = false; }, 300);">
+			<a href="/products" class="W_Collapsible__trigger"> Ürünlerimiz</a>
+			<div class="W_Collapsible__panel">
+				<div
+					class="labelTest m-4 p-4 bg-slate-500 rounded-sm text-slate-100"
+					x-label:asd="sss">
+					<span
+						>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem minus
+						repellendus architecto officia reprehenderit nobis veniam ducimus, illo
+						adipisci minima fuga eligendi sunt dignissimos praesentium explicabo alias.
+						Sunt, saepe ab.</span
+					>
+				</div>
+			</div>
+		</div>
+
+		<aside x-data="{ count: 0 }" class="bg-red-400 p-2">
+			<button x-on:click="count = count + 1">set count</button>
+			<div>You clicked <span x-text="count"></span> times</div>
+			<header><a href="#">test component header</a></header>
+			<main>test component main</main>
+			<footer>test component footer</footer>
+		</aside>
+
+		<div
+			class="W_Collapsible"
+			x-data="{ isExpanded: false }"
+			x-bind:class="{ 'W_Collapsible--expanded': isExpanded }"
+			x-on:mouseover.stop="isExpanded = true;">
+			<a href="/products" class="W_Collapsible__trigger"> Ürünlerimiz</a>
+			<div class="W_Collapsible__panel">
+				<p>
+					Lorem ipsum dolor sit, amet consectetur adipisicing elit. Libero eius
+					consectetur aliquam repellat veritatis eos eligendi aperiam recusandae. Aliquam
+					quam repellat voluptatem recusandae labore ipsam quibusdam porro esse asperiores
+					laboriosam?
+				</p>
+			</div>
+		</div>
+
+		<br />
+		<a href="/about/">About page</a>
+		<br />
+		<a href="/contact">Contact page</a>
+		<br />
+		<br />
+
+		<p>
+			Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore tenetur ex, impedit
+			molestiae, provident suscipit qui fugiat at, rerum recusandae odio placeat. Aperiam,
+			sequi nobis? Recusandae impedit repellendus fugit vitae.
+		</p>
+		<p>
+			Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore tenetur ex, impedit
+			molestiae, provident suscipit qui fugiat at, rerum recusandae odio placeat. Aperiam,
+			sequi nobis? Recusandae impedit repellendus fugit vitae.
+		</p>
+		<p>
+			Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore tenetur ex, impedit
+			molestiae, provident suscipit qui fugiat at, rerum recusandae odio placeat. Aperiam,
+			sequi nobis? Recusandae impedit repellendus fugit vitae.
+		</p>
+		<p>
+			Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore tenetur ex, impedit
+			molestiae, provident suscipit qui fugiat at, rerum recusandae odio placeat. Aperiam,
+			sequi nobis? Recusandae impedit repellendus fugit vitae.
+		</p>
+		<p>
+			Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore tenetur ex, impedit
+			molestiae, provident suscipit qui fugiat at, rerum recusandae odio placeat. Aperiam,
+			sequi nobis? Recusandae impedit repellendus fugit vitae.
+		</p>
+		<p>
+			Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore tenetur ex, impedit
+			molestiae, provident suscipit qui fugiat at, rerum recusandae odio placeat. Aperiam,
+			sequi nobis? Recusandae impedit repellendus fugit vitae.
+		</p>
+		<p>
+			Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore tenetur ex, impedit
+			molestiae, provident suscipit qui fugiat at, rerum recusandae odio placeat. Aperiam,
+			sequi nobis? Recusandae impedit repellendus fugit vitae.
+		</p>
+		<p>
+			Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore tenetur ex, impedit
+			molestiae, provident suscipit qui fugiat at, rerum recusandae odio placeat. Aperiam,
+			sequi nobis? Recusandae impedit repellendus fugit vitae.
+		</p>
+		<p>
+			Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore tenetur ex, impedit
+			molestiae, provident suscipit qui fugiat at, rerum recusandae odio placeat. Aperiam,
+			sequi nobis? Recusandae impedit repellendus fugit vitae.
+		</p>
+		<p>
+			Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore tenetur ex, impedit
+			molestiae, provident suscipit qui fugiat at, rerum recusandae odio placeat. Aperiam,
+			sequi nobis? Recusandae impedit repellendus fugit vitae.
+		</p>
+
+		<header class="deneme">
+			<img src={ImgLogo} alt="" />
+		</header>
+	</div>
+</DefaultLayout>

@@ -1,0 +1,112 @@
+---
+import "./MainHeader.component.scss";
+import ImgLogo from "@assets/img/logo.svg?url";
+
+import { Icon } from "astro-icon";
+
+export interface Props {
+	submenu: string[];
+}
+const { submenu } = Astro.props;
+---
+
+<header class="C_MainHeader U_Blurred__child">
+	<div class="container">
+		<div class="C_MainHeader__wrapper">
+			<div class="flex justify-between">
+				<a href="/" class="C_MainHeader__logo">
+					<img src={ImgLogo} alt="Ce-Tek Spray Nozzle Brand Logo" />
+				</a>
+
+				<div class="mr-auto"></div>
+
+				<nav class="C_MainHeader__nav">
+					<button x-data x-on:click="$store.modals.activate('C_NavigationDrawer');">
+						<span></span>
+						<span></span>
+						<span></span>
+					</button>
+
+					<ul x-navindicator>
+						<li x-navindicator:trigger="a">
+							<a href="/"> Ana Sayfa</a>
+						</li>
+
+						<li
+							class="W_Collapsible"
+							x-data="{ isExpanded: false }"
+							x-bind:class="{ 'W_Collapsible--expanded': isExpanded }"
+							x-on:mouseenter.stop="isExpanded = true;"
+							x-on:mouseleave.stop="isExpanded = false;"
+							x-navindicator:trigger="a.W_Collapsible__trigger">
+							<a href="/products" class="W_Collapsible__trigger">
+								Ürünlerimiz
+								<Icon name="mdi:chevron-down" width="20" height="20" />
+							</a>
+							<div class="W_Collapsible__panel">
+								<ul x-navindicator>
+									{
+										submenu.map((submenu: any) => {
+											return (
+												<li x-navindicator:trigger="a">
+													<a href={`/products/${submenu.slug.current}`}>
+														{submenu.title}
+													</a>
+												</li>
+											);
+										})
+									}
+									<li x-navindicator:trigger="a">
+										<a href="/products"><strong>Daha Fazlası</strong></a>
+									</li>
+								</ul>
+							</div>
+						</li>
+
+						<li
+							class="W_Collapsible"
+							x-data="{ isExpanded: false }"
+							x-bind:class="{ 'W_Collapsible--expanded': isExpanded }"
+							x-on:click.outside="isExpanded = false;"
+							x-navindicator:trigger="a.W_Collapsible__trigger">
+							<a
+								href="/"
+								class="W_Collapsible__trigger"
+								x-on:click.prevent="isExpanded = !isExpanded;">
+								Sektörel Nozullar
+								<Icon name="mdi:chevron-down" width="20" height="20" />
+							</a>
+
+							<div class="W_Collapsible__panel">
+								<ul x-navindicator>
+									{
+										submenu.map((submenu: any) => {
+											return (
+												<li x-navindicator:trigger="a">
+													<a href={`/products/${submenu.slug.current}`}>
+														{submenu.title}
+													</a>
+												</li>
+											);
+										})
+									}
+									<li x-navindicator:trigger="a">
+										<a href="/products"><strong>Daha Fazlası</strong></a>
+									</li>
+								</ul>
+							</div>
+						</li>
+
+						<li x-navindicator:trigger="a">
+							<a href="/gallery">Galeri</a>
+						</li>
+
+						<li x-navindicator:trigger="a">
+							<a href="/contact">İletişim</a>
+						</li>
+					</ul>
+				</nav>
+			</div>
+		</div>
+	</div>
+</header>
