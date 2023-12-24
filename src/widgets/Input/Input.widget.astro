@@ -1,0 +1,27 @@
+---
+import "./Input.widget.scss";
+
+export interface Props {
+	tag?: string;
+	name?: string;
+	label: string;
+	errorMessage?: string;
+}
+const { tag, label, name, errorMessage, ...rest } = Astro.props;
+
+const Element = tag ? tag : "input";
+---
+
+<label
+	class="W_FormInput"
+	x-bind:class={`{ 'W_FormInput--error': checkValidity('${name}') }`}
+	x-cloak>
+	<strong class="W_FormInput__label">
+		{label}
+		<span x-text={`'' + errors['${name}'] + ''`}></span>
+	</strong>
+	<Element class="W_FormInput__field" name={name} x-model={`fields['${name}']`} {...rest} />
+</label>
+
+<div x-text={`fields['${name}']`}></div>
+<div></div>

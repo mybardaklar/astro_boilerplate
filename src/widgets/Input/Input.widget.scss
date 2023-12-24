@@ -1,0 +1,43 @@
+.W_FormInput {
+	@apply flex flex-col bg-white border border-zinc-200 rounded-sm py-2 px-4 text-sm select-none transition duration-500;
+
+	&__label {
+		@apply flex justify-between items-center font-normal uppercase text-xs cursor-pointer transition duration-500;
+
+		span {
+			@apply bg-red-600 bg-opacity-20 text-red-600 px-2 rounded-sm text-[10px] invisible opacity-0;
+		}
+	}
+
+	&__field {
+		@apply mt-2 outline-0;
+
+		&::placeholder {
+			@apply text-zinc-300;
+		}
+	}
+
+	&__errors {
+		@apply text-red-600 text-xs mt-2;
+	}
+
+	&:focus-within {
+		@apply border-amber-900;
+
+		.W_FormInput__label {
+			@apply text-amber-900;
+		}
+	}
+
+	&--error {
+		// @apply border-red-600;
+
+		.W_FormInput__label {
+			// @apply text-red-600;
+
+			span {
+				@apply visible opacity-100;
+			}
+		}
+	}
+}

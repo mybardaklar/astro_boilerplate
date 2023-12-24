@@ -15,7 +15,7 @@
 		}
 	}
 
-	body {
+	.S_Main {
 		$backgroundLines: math.div(100%, 6);
 
 		background-image: linear-gradient(
@@ -74,16 +74,11 @@
 	}
 }
 
-.U_Blurred {
-	&--on {
-		@apply overflow-hidden;
+.U_Blur {
+	@apply transition-all duration-500;
+	transition-delay: var(--W_Modal--transition-delay);
 
-		.U_Blurred__child {
-			@apply blur-sm delay-0;
-		}
-	}
-
-	&__child {
-		@apply duration-500 delay-500;
+	&.U_Blur--on {
+		@apply overflow-hidden blur-sm;
 	}
 }

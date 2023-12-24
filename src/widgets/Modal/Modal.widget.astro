@@ -9,15 +9,15 @@ export interface Props {
 }
 const { id, tag, classList, parentId } = Astro.props;
 
-const Element = tag ? tag : "aside";
+const Element = tag ? tag : "section";
 ---
 
 <script src="./Modal.widget.js"></script>
 
 <Element
-	id={`${id}`}
-	class="W_Modal"
+	class="W_Modal U_HasTooltips"
 	class:list={classList}
+	id={`${id}`}
 	x-bind={parentId ? `W_Modal('${parentId}')` : "W_Modal"}
 	x-cloak>
 	<div class="W_Modal__backdrop" @click={`$store.modals.deactivate('${id}');`}></div>

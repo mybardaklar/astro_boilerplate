@@ -35,18 +35,6 @@
 			> li {
 				@apply relative h-24 flex items-center;
 
-				&:hover {
-					> a,
-					> span,
-					.W_Collapsible__trigger {
-						@apply text-primary-500;
-
-						[astro-icon] {
-							@apply text-primary-500;
-						}
-					}
-				}
-
 				> a,
 				> span,
 				.W_Collapsible__trigger {
@@ -55,13 +43,23 @@
 					[astro-icon] {
 						@apply ml-1 -mt-1 transition duration-500 text-textColor;
 					}
+
+					&:hover {
+						@apply text-primary-500;
+
+						[astro-icon] {
+							@apply text-primary-500;
+						}
+					}
 				}
 
 				&.W_Collapsible {
 					&--expanded {
 						.W_Collapsible__trigger {
+							@apply bg-primary-500 bg-opacity-10 text-primary-500;
+
 							[astro-icon] {
-								@apply -rotate-180;
+								@apply -rotate-180 text-primary-500;
 							}
 						}
 					}

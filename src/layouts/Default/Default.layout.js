@@ -1,58 +1,53 @@
 import Alpine from "alpinejs";
+import DirectiveNavIndicator from "@alpinejs/NavIndicator.directive.js";
+import DirectiveTooltip from "@alpinejs/Tooltip.directive.js";
+import DataFormValidation from "@alpinejs/FormValidation.data.js";
 
-Alpine.directive("navindicator", (el, { value, expression }) => {
-	if (!value) {
-		el.classList.add("W_HasIndicator");
-		const indicatorParentNode = document.createElement(expression ? expression : "div");
-		const indicatorNode = document.createElement("mark");
-		indicatorParentNode.classList.add("W_HasIndicator__marker");
-		indicatorParentNode.appendChild(indicatorNode);
-		el.appendChild(indicatorParentNode);
-	} else {
-		let DOMIndicatorParent = el
-			.closest("[x-navindicator]")
-			.querySelector(":scope > .W_HasIndicator__marker");
-		let DOMIndicatorMarker = DOMIndicatorParent.querySelector("mark");
-		let currentTag = expression ? el.querySelector(expression) : el;
+Alpine.directive("indicator", DirectiveNavIndicator);
+Alpine.directive("tooltip", DirectiveTooltip);
 
-		if (Array.prototype.slice.call(el.parentNode.children).indexOf(el) === 0) {
-			DOMIndicatorParent.style.transform = `translate(${el.offsetLeft}px, ${el.offsetTop}px)`;
-			DOMIndicatorMarker.style.width = `${currentTag.offsetWidth}px`;
-			DOMIndicatorMarker.style.height = `${currentTag.offsetHeight}px`;
-		}
-
-		el.addEventListener("mouseenter", (event) => {
-			// event.stopPropagation();
-
-			DOMIndicatorParent.style.transform = `translate(${el.offsetLeft}px, ${el.offsetTop}px)`;
-			DOMIndicatorParent.style.visibility = "visible";
-			DOMIndicatorParent.style.opacity = "1.0";
-			DOMIndicatorMarker.style.width = `${currentTag.offsetWidth}px`;
-			DOMIndicatorMarker.style.height = `${currentTag.offsetHeight}px`;
-		});
-		el.addEventListener("mouseleave", (event) => {
-			// event.stopPropagation();
-
-			DOMIndicatorParent.style.visibility = "";
-			DOMIndicatorParent.style.opacity = "";
-		});
-	}
-});
+Alpine.data("W_Form", DataFormValidation);
 
 Alpine.store("modals", {
 	items: {
-		["C_NavigationDrawer"]: false,
-		["W_Modal-ltr"]: false,
-		["W_Modal-rtl"]: false,
-		["W_Modal-ttb"]: false,
-		["W_Modal-btt"]: false,
-		["W_Modal-1"]: false,
+		["C_NavigationDrawer"]: {
+			active: false,
+			posX: "start",
+			posY: "start",
+		},
+		["W_Modal-1"]: {
+			active: true,
+			posX: "end",
+			posY: "center",
+			transition: "W_Modal--transition:translate",
+		},
+		["W_Modal-2"]: {
+			active: false,
+			posX: "start",
+			posY: "start",
+			transition: "W_Modal--transition:scale",
+		},
+		["W_Modal-3"]: {
+			active: false,
+			posX: "start",
+			posY: "start",
+		},
+		["W_Modal-4"]: {
+			active: false,
+			posX: "start",
+			posY: "start",
+		},
+		["W_Modal-5"]: {
+			active: false,
+			posX: "start",
+			posY: "start",
+		},
 	},
 	activate(id) {
-		this.items[id] = true;
+		this.items[id].active = true;
 	},
 	deactivate(id) {
-		this.items[id] = false;
+		this.items[id].active = false;
 	},
 });
 

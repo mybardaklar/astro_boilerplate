@@ -4,17 +4,22 @@ import ImgLogo from "@assets/img/logo.svg?url";
 
 import { Icon } from "astro-icon";
 
+import W_Tooltip from "@widgets/Tooltip/Tooltip.widget.astro";
+
 export interface Props {
 	submenu: string[];
 }
 const { submenu } = Astro.props;
 ---
 
-<header class="C_MainHeader U_Blurred__child">
+<header class="C_MainHeader">
 	<div class="container">
 		<div class="C_MainHeader__wrapper">
 			<div class="flex justify-between">
 				<a href="/" class="C_MainHeader__logo">
+					<W_Tooltip position="bottom" axis="end" arrow={true}>
+						Ce-Tek Brand Logo
+					</W_Tooltip>
 					<img src={ImgLogo} alt="Ce-Tek Spray Nozzle Brand Logo" />
 				</a>
 
@@ -27,8 +32,8 @@ const { submenu } = Astro.props;
 						<span></span>
 					</button>
 
-					<ul x-navindicator>
-						<li x-navindicator:trigger="a">
+					<ul x-indicator>
+						<li x-indicator:trigger="a">
 							<a href="/"> Ana Sayfa</a>
 						</li>
 
@@ -38,17 +43,17 @@ const { submenu } = Astro.props;
 							x-bind:class="{ 'W_Collapsible--expanded': isExpanded }"
 							x-on:mouseenter.stop="isExpanded = true;"
 							x-on:mouseleave.stop="isExpanded = false;"
-							x-navindicator:trigger="a.W_Collapsible__trigger">
+							x-indicator:trigger="a.W_Collapsible__trigger">
 							<a href="/products" class="W_Collapsible__trigger">
 								Ürünlerimiz
 								<Icon name="mdi:chevron-down" width="20" height="20" />
 							</a>
 							<div class="W_Collapsible__panel">
-								<ul x-navindicator>
+								<ul x-indicator>
 									{
 										submenu.map((submenu: any) => {
 											return (
-												<li x-navindicator:trigger="a">
+												<li x-indicator:trigger="a">
 													<a href={`/products/${submenu.slug.current}`}>
 														{submenu.title}
 													</a>
@@ -56,7 +61,7 @@ const { submenu } = Astro.props;
 											);
 										})
 									}
-									<li x-navindicator:trigger="a">
+									<li x-indicator:trigger="a">
 										<a href="/products"><strong>Daha Fazlası</strong></a>
 									</li>
 								</ul>
@@ -68,7 +73,7 @@ const { submenu } = Astro.props;
 							x-data="{ isExpanded: false }"
 							x-bind:class="{ 'W_Collapsible--expanded': isExpanded }"
 							x-on:click.outside="isExpanded = false;"
-							x-navindicator:trigger="a.W_Collapsible__trigger">
+							x-indicator:trigger="a.W_Collapsible__trigger">
 							<a
 								href="/"
 								class="W_Collapsible__trigger"
@@ -78,11 +83,11 @@ const { submenu } = Astro.props;
 							</a>
 
 							<div class="W_Collapsible__panel">
-								<ul x-navindicator>
+								<ul x-indicator>
 									{
 										submenu.map((submenu: any) => {
 											return (
-												<li x-navindicator:trigger="a">
+												<li x-indicator:trigger="a">
 													<a href={`/products/${submenu.slug.current}`}>
 														{submenu.title}
 													</a>
@@ -90,18 +95,18 @@ const { submenu } = Astro.props;
 											);
 										})
 									}
-									<li x-navindicator:trigger="a">
+									<li x-indicator:trigger="a">
 										<a href="/products"><strong>Daha Fazlası</strong></a>
 									</li>
 								</ul>
 							</div>
 						</li>
 
-						<li x-navindicator:trigger="a">
+						<li x-indicator:trigger="a">
 							<a href="/gallery">Galeri</a>
 						</li>
 
-						<li x-navindicator:trigger="a">
+						<li x-indicator:trigger="a">
 							<a href="/contact">İletişim</a>
 						</li>
 					</ul>

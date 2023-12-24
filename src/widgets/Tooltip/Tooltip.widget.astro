@@ -1,0 +1,17 @@
+---
+import "./Tooltip.widget.scss";
+
+export interface Props {
+	position?: string;
+	axis?: string;
+	arrow?: boolean;
+}
+const { position = "top", axis = "start", arrow = false } = Astro.props;
+---
+
+<div
+	class="hidden"
+	x-tooltip={`{ position: '${position}', axis: '${axis}', arrow: ${arrow} }`}
+	x-cloak>
+	<slot />
+</div>

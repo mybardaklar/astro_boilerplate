@@ -4,14 +4,16 @@ import ImgLogo from "@assets/img/logo.svg?url";
 
 import { Icon } from "astro-icon";
 import W_Modal from "@widgets/Modal/Modal.widget.astro";
+import W_Tooltip from "@widgets/Tooltip/Tooltip.widget.astro";
 ---
 
-<W_Modal id="W_Modal-ltr" parentId="W_Modal-rtl" classList={["W_Modal--ltr"]}>
+<W_Modal id="W_Modal-1" parentId="W_Modal-2">
 	<div class="p-4">
 		<button
 			class="inline-block py-2 px-3 bg-indigo-500 text-white text-sm font-semibold rounded-md"
-			@click="$store.modals.activate('W_Modal-rtl');">
-			W_Modal-rtl
+			@click="$store.modals.activate('W_Modal-2');">
+			<W_Tooltip position="bottom" axis="end" arrow={true}>tooltip top</W_Tooltip>
+			 W_Modal-2
 		</button>
 		<hr class="my-4" />
 		<p>
@@ -87,28 +89,12 @@ import W_Modal from "@widgets/Modal/Modal.widget.astro";
 	</div>
 </W_Modal>
 
-<W_Modal id="W_Modal-rtl" parentId="W_Modal-ttb" classList={["W_Modal--rtl"]}>
+<W_Modal id="W_Modal-2" parentId="W_Modal-3">
 	<div class="p-4">
 		<button
 			class="inline-block py-2 px-3 bg-indigo-500 text-white text-sm font-semibold rounded-md"
-			@click="$store.modals.activate('W_Modal-ttb');">
-			W_Modal-ttb
-		</button>
-		<hr class="my-4" />
-		<p>
-			Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur nostrum mollitia,
-			dolores ad eligendi quasi dignissimos! Ipsum itaque dolore voluptatem atque numquam
-			delectus quibusdam nemo aliquid qui earum, minus beatae!
-		</p>
-	</div>
-</W_Modal>
-
-<W_Modal id="W_Modal-ttb" parentId="W_Modal-btt" classList={["W_Modal--ttb"]}>
-	<div class="p-4">
-		<button
-			class="inline-block py-2 px-3 bg-indigo-500 text-white text-sm font-semibold rounded-md"
-			@click="$store.modals.activate('W_Modal-btt');">
-			W_Modal-btt
+			@click="$store.modals.activate('W_Modal-3');">
+			W_Modal-3
 		</button>
 		<hr class="my-4" />
 		<p>
@@ -119,7 +105,23 @@ import W_Modal from "@widgets/Modal/Modal.widget.astro";
 	</div>
 </W_Modal>
 
-<W_Modal id="W_Modal-btt" parentId="W_Modal-1" classList={["W_Modal--btt"]}>
+<W_Modal id="W_Modal-3" parentId="W_Modal-4">
+	<div class="p-4">
+		<button
+			class="inline-block py-2 px-3 bg-indigo-500 text-white text-sm font-semibold rounded-md"
+			@click="$store.modals.activate('W_Modal-4');">
+			W_Modal-4
+		</button>
+		<hr class="my-4" />
+		<p>
+			Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur nostrum mollitia,
+			dolores ad eligendi quasi dignissimos! Ipsum itaque dolore voluptatem atque numquam
+			delectus quibusdam nemo aliquid qui earum, minus beatae!
+		</p>
+	</div>
+</W_Modal>
+
+<W_Modal id="W_Modal-4" parentId="W_Modal-5">
 	<div class="p-4">
 		<button
 			class="inline-block py-2 px-3 bg-indigo-500 text-white text-sm font-semibold rounded-md"
@@ -135,7 +137,7 @@ import W_Modal from "@widgets/Modal/Modal.widget.astro";
 	</div>
 </W_Modal>
 
-<W_Modal id="W_Modal-1" classList={["W_Modal--scale", "C_Modal"]}>
+<W_Modal id="W_Modal-5" classList={["C_Modal"]}>
 	<div class="p-10">
 		<p>
 			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas et arcu et eros
